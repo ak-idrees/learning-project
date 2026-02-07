@@ -46,6 +46,7 @@ jobs:
    name: Deploy Container Locally
    runs-on: self-hosted
    needs: build
+   
 
    steps:
     - name: Checkout code
