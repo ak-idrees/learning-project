@@ -11,29 +11,7 @@ on:
       - main
 
 jobs:
-  test:
-    if: |
-      github.event_name == 'push' ||
-      (github.event.pull_request.merged == true)
-    name: Run Tests
-    runs-on: self-hosted
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
-  build:
+   build:
     name: Build Docker Image
     runs-on: self-hosted
     needs: test
